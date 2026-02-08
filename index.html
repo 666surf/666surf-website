@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>666-SURF - New Jersey Surf Reports by Text</title>
-    <meta name="description" content="Get instant NJ surf forecasts via SMS. Text 856-666-SURF for current conditions, 3-day forecasts, webcams, and daily reports. Free service covering 26+ Jersey Shore breaks.">
+    <meta name="description" content="Get instant NJ surf forecasts via SMS. Text <a href="sms:+18566667873">856-666-SURF</a> for current conditions, 3-day forecasts, webcams, and daily reports. Free service covering 26+ Jersey Shore breaks.">
     <style>
         * {
             margin: 0;
@@ -60,18 +60,6 @@
             font-size: 1.1em;
             opacity: 0.9;
             margin-top: 20px;
-        }
-
-        /* Hero links should be white */
-        .hero a {
-            color: white;
-            text-decoration: none;
-            font-weight: 700;
-        }
-
-        .hero a:hover {
-            text-decoration: underline;
-            opacity: 0.9;
         }
 
         /* Content Sections */
@@ -212,22 +200,31 @@
         }
 
         footer a {
-            color: white;
-            text-decoration: none;
             margin: 0 15px;
         }
 
-        footer a:hover {
-            text-decoration: underline;
-        }
-
-        /* Links */
+        /* Links - Uniform styling across site */
         a {
-            color: #14b8a6;
+            color: #14b8a6;  /* Teal - ocean theme, distinct from headings */
             text-decoration: none;
+            transition: color 0.2s ease;
         }
 
         a:hover {
+            color: #0d9488;  /* Darker teal on hover */
+            text-decoration: underline;
+        }
+
+        /* Exception: Links in hero and footer stay white for visibility on dark backgrounds */
+        .hero a,
+        footer a {
+            color: white;
+            font-weight: 700;
+        }
+
+        .hero a:hover,
+        footer a:hover {
+            color: rgba(255, 255, 255, 0.9);
             text-decoration: underline;
         }
 
