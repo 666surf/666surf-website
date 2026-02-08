@@ -1,0 +1,715 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>666 Surf - New Jersey Surf Reports by Text</title>
+    <meta name="description" content="Get instant NJ surf forecasts via SMS. Text 856-666-SURF for current conditions, 3-day forecasts, webcams, and daily reports. Free service covering 26+ Jersey Shore breaks.">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #f5f5f5;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            color: white;
+            text-align: center;
+            padding: 60px 20px;
+            margin: -20px -20px 40px -20px;
+        }
+
+        .hero h1 {
+            font-size: 3em;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+
+        .hero .tagline {
+            font-size: 1.5em;
+            margin-bottom: 30px;
+            opacity: 0.95;
+        }
+
+        .hero .phone-number {
+            font-size: 2em;
+            font-weight: 700;
+            background: rgba(255,255,255,0.2);
+            padding: 15px 30px;
+            border-radius: 50px;
+            display: inline-block;
+            margin: 20px 0;
+        }
+
+        .hero .example {
+            font-size: 1.1em;
+            opacity: 0.9;
+            margin-top: 20px;
+        }
+
+        /* Content Sections */
+        .section {
+            background: white;
+            padding: 40px;
+            margin-bottom: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        h2 {
+            font-size: 2em;
+            margin-bottom: 20px;
+            color: #1e3c72;
+            border-bottom: 3px solid #2a5298;
+            padding-bottom: 10px;
+        }
+
+        h3 {
+            font-size: 1.5em;
+            margin: 30px 0 15px 0;
+            color: #2a5298;
+        }
+
+        h4 {
+            font-size: 1.2em;
+            margin: 20px 0 10px 0;
+            color: #333;
+        }
+
+        p {
+            margin-bottom: 15px;
+            font-size: 1.05em;
+        }
+
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+
+        .feature {
+            padding: 20px;
+            background: #f8f9fa;
+            border-radius: 8px;
+            border-left: 4px solid #2a5298;
+        }
+
+        .feature strong {
+            display: block;
+            margin-bottom: 8px;
+            color: #1e3c72;
+        }
+
+        /* Commands */
+        .command {
+            background: #f8f9fa;
+            padding: 15px 20px;
+            margin: 15px 0;
+            border-radius: 6px;
+            border-left: 4px solid #2a5298;
+        }
+
+        .command strong {
+            color: #1e3c72;
+            font-size: 1.1em;
+        }
+
+        .command-example {
+            color: #666;
+            font-style: italic;
+            margin-top: 5px;
+            font-size: 0.95em;
+        }
+
+        /* Sample Messages */
+        .sample-message {
+            background: #1e1e1e;
+            color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            font-family: "Courier New", monospace;
+            margin: 20px 0;
+            white-space: pre-wrap;
+            font-size: 0.95em;
+            overflow-x: auto;
+        }
+
+        /* Breaks List */
+        .breaks-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 10px;
+            margin: 20px 0;
+        }
+
+        .breaks-grid div {
+            padding: 10px;
+            background: #f8f9fa;
+            border-radius: 4px;
+        }
+
+        /* Lists */
+        ul {
+            margin: 15px 0 15px 30px;
+        }
+
+        li {
+            margin: 8px 0;
+        }
+
+        /* Highlight boxes */
+        .highlight {
+            background: #e7f3ff;
+            border-left: 4px solid #2a5298;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 4px;
+        }
+
+        .warning {
+            background: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 4px;
+        }
+
+        /* Footer */
+        footer {
+            background: #1e3c72;
+            color: white;
+            text-align: center;
+            padding: 40px 20px;
+            margin: 40px -20px -20px -20px;
+        }
+
+        footer a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* Links */
+        a {
+            color: #2a5298;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2em;
+            }
+            
+            .hero .tagline {
+                font-size: 1.2em;
+            }
+            
+            .hero .phone-number {
+                font-size: 1.5em;
+                padding: 12px 20px;
+            }
+            
+            .section {
+                padding: 20px;
+            }
+            
+            h2 {
+                font-size: 1.5em;
+            }
+        }
+
+        /* Table of Contents */
+        .toc {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+        }
+
+        .toc ul {
+            list-style: none;
+            margin: 10px 0;
+        }
+
+        .toc li {
+            margin: 5px 0;
+        }
+
+        .toc a {
+            color: #1e3c72;
+            font-weight: 500;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Hero Section -->
+    <div class="hero">
+        <h1>🌊 666 Surf</h1>
+        <div class="tagline">New Jersey Surf Reports by Text</div>
+        <p style="font-size: 1.2em; margin: 20px 0;">Get instant surf forecasts for any NJ beach — no apps, no accounts, just text.</p>
+        <div class="phone-number">856-666-SURF</div>
+        <div style="font-size: 1.1em; margin-top: 10px;">(856-666-7873)</div>
+        <div class="example">Example: Text "surf lbi" → Get instant conditions</div>
+    </div>
+
+    <div class="container">
+
+        <!-- What is 666 Surf -->
+        <div class="section" id="about">
+            <h2>What is 666 Surf?</h2>
+            <p>666 Surf is a free SMS service delivering up-to-date surf forecasts for New Jersey surf breaks via text message. From Sandy Hook to Cape May, get current conditions, 3-day forecasts, webcam links, and daily reports — all without downloading an app or creating an account.</p>
+            
+            <div class="features">
+                <div class="feature">
+                    <strong>⚡ Instant Surf Reports</strong>
+                    Current conditions for 26+ NJ breaks
+                </div>
+                <div class="feature">
+                    <strong>📅 Daily Reports</strong>
+                    Optional automated reports at your chosen time
+                </div>
+                <div class="feature">
+                    <strong>📷 Live Webcams</strong>
+                    Webcam links when available
+                </div>
+                <div class="feature">
+                    <strong>🏠 Save Your Spot</strong>
+                    Set a favorite "home" break for quick access
+                </div>
+                <div class="feature">
+                    <strong>🌊 3-Day Forecasts</strong>
+                    Extended outlooks for planning
+                </div>
+                <div class="feature">
+                    <strong>🚫 No Spam</strong>
+                    Messages only when you request them
+                </div>
+            </div>
+
+            <p><strong>This is a free, non-commercial hobby project for NJ surfers.</strong> Not affiliated with any official surf or weather agency. Standard carrier message rates may apply.</p>
+        </div>
+
+        <!-- How It Works -->
+        <div class="section" id="how-it-works">
+            <h2>How It Works</h2>
+            
+            <h3>1. Text a Command</h3>
+            <p>Send a message to <strong>856-666-SURF</strong> with any command below.</p>
+
+            <h3>2. Get Instant Info</h3>
+            <p>Receive surf conditions, forecasts, or webcam links immediately.</p>
+
+            <h3>3. Set Preferences (Optional)</h3>
+            <p>Save a home break and schedule daily reports if you want.</p>
+
+            <h3>4. Opt Out Anytime</h3>
+            <p>Text "forget me" or "STOP" to unsubscribe and delete all your data instantly.</p>
+        </div>
+
+        <!-- Commands -->
+        <div class="section" id="commands">
+            <h2>Commands</h2>
+            <p>Text these to <strong>856-666-SURF (856-666-7873)</strong>:</p>
+
+            <h3>📊 Get Surf Reports</h3>
+            
+            <div class="command">
+                <strong>surf &lt;break&gt;</strong> — Current Forecast
+                <p>Get today's AM/PM surf conditions for any NJ break.</p>
+                <div class="command-example">Example: surf manasquan</div>
+            </div>
+
+            <div class="command">
+                <strong>home</strong> — Your Saved Break
+                <p>Quick report for your home break (after setting it).</p>
+            </div>
+
+            <div class="command">
+                <strong>3 day &lt;break&gt;</strong> — Extended Forecast
+                <p>3-day outlook with wave heights, wind, and energy ratings.</p>
+                <div class="command-example">Example: 3 day ocean city</div>
+            </div>
+
+            <h3>🏠 Save Preferences</h3>
+
+            <div class="command">
+                <strong>set home &lt;break&gt;</strong> — Set Home Break
+                <p>Save your favorite spot for quick access.</p>
+                <div class="command-example">Example: set home lbi</div>
+            </div>
+
+            <div class="command">
+                <strong>daily 6am</strong> — Schedule Daily Reports
+                <p>Get automated reports at your chosen time (e.g., daily 7:30pm, daily 545).</p>
+            </div>
+
+            <div class="command">
+                <strong>daily</strong> — Check Schedule
+                <p>See when your daily report is set for.</p>
+            </div>
+
+            <div class="command">
+                <strong>daily off</strong> — Cancel Daily Reports
+                <p>Stop scheduled messages (also works: daily stop, daily cancel).</p>
+            </div>
+
+            <h3>ℹ️ Info & Help</h3>
+
+            <div class="command">
+                <strong>breaks</strong> — All Locations
+                <p>See the complete list of 26+ supported NJ surf breaks.</p>
+            </div>
+
+            <div class="command">
+                <strong>cams</strong> — Webcam List
+                <p>View which breaks have live webcams available.</p>
+            </div>
+
+            <div class="command">
+                <strong>cams &lt;break&gt;</strong> — Cams for One Spot
+                <p>Get webcam links for a specific break.</p>
+                <div class="command-example">Example: cams seaside heights</div>
+            </div>
+
+            <div class="command">
+                <strong>help</strong> — Command List
+                <p>Display available commands and support info.</p>
+            </div>
+
+            <h3>🗑️ Opt Out</h3>
+
+            <div class="command">
+                <strong>forget me</strong> — Delete All Data
+                <p>Immediately removes your number and all preferences from our system.</p>
+                <div class="command-example">Also works: STOP, reset</div>
+            </div>
+        </div>
+
+        <!-- Supported Breaks -->
+        <div class="section" id="breaks">
+            <h2>Supported Breaks</h2>
+            <p>666 Surf covers <strong>26 New Jersey surf breaks</strong> from north to south:</p>
+
+            <h3>Northern NJ</h3>
+            <div class="breaks-grid">
+                <div>Sandy Hook</div>
+                <div>Long Branch</div>
+                <div>Deal</div>
+                <div>Allenhurst</div>
+                <div>Loch Arbor</div>
+                <div>Asbury Park</div>
+                <div>Bradley Beach</div>
+                <div>Belmar</div>
+                <div>Spring Lake</div>
+            </div>
+
+            <h3>Central NJ</h3>
+            <div class="breaks-grid">
+                <div>Manasquan</div>
+                <div>Point Pleasant</div>
+                <div>Bay Head</div>
+                <div>Lavallette</div>
+                <div>Seaside Heights</div>
+                <div>Seaside Park</div>
+                <div>Island Beach State Park</div>
+            </div>
+
+            <h3>Southern NJ</h3>
+            <div class="breaks-grid">
+                <div>LBI (Long Beach Island)</div>
+                <div>Atlantic City</div>
+                <div>Ventnor Pier</div>
+                <div>Margate Pier</div>
+                <div>Ocean City</div>
+                <div>Strathmere</div>
+                <div>Avalon</div>
+                <div>North Wildwood</div>
+                <div>Cape May</div>
+            </div>
+
+            <p style="margin-top: 20px;"><em>Text <strong>breaks</strong> to see the full list with shortcuts and aliases.</em></p>
+        </div>
+
+        <!-- Sample Messages -->
+        <div class="section" id="samples">
+            <h2>Sample Messages</h2>
+
+            <h3>Surf Report (Current Conditions)</h3>
+            <div class="sample-message">🌊 LBI Surf 2/8
+🌡️ Water Temp: 38°F
+
+☀️ AM REPORT
+2.5 ft E @ 8 sec
+Energy: 145 kJ
+High: 5:23 AM @ 4.2 ft
+Low: 11:47 AM @ 0.3 ft
+Wind: 12 mph NW
+Feels like: 28° F
+
+🌅 PM REPORT
+3.0 ft SE @ 9 sec
+Energy: 178 kJ
+High: 5:51 PM @ 4.5 ft
+Low: 11:59 PM @ 0.4 ft
+Wind: 8 mph W
+Feels like: 32° F</div>
+
+            <h3>3-Day Forecast</h3>
+            <div class="sample-message">🌊 Manasquan – 3 Day
+
+SUNDAY08
+AM: 2.5 ft E @ 8s | 12 mph NW | 145 kJ
+PM: 3.0 ft SE @ 9s | 8 mph W | 178 kJ
+
+MONDAY09
+AM: 2.0 ft E @ 7s | 15 mph N | 120 kJ
+PM: 2.5 ft E @ 8s | 10 mph NE | 140 kJ
+
+TUESDAY10
+AM: 1.8 ft E @ 6s | 18 mph NE | 95 kJ
+PM: 2.0 ft ESE @ 7s | 12 mph E | 110 kJ</div>
+
+            <h3>Setting Preferences</h3>
+            <div class="sample-message">✅ Home break: Manasquan
+Text 'home' anytime for your report.</div>
+
+            <div class="sample-message">✅ Daily Manasquan reports at 6:00 AM</div>
+
+            <h3>Opt-Out Confirmation</h3>
+            <div class="sample-message">✅ All data deleted
+You can start over with: set home &lt;break&gt;</div>
+        </div>
+
+        <!-- Privacy Policy -->
+        <div class="section" id="privacy">
+            <h2>Privacy Policy</h2>
+            <p><em>Effective Date: February 8, 2026</em></p>
+
+            <h3>What We Collect</h3>
+            <p>666 Surf only stores:</p>
+            <ul>
+                <li>Your phone number (to send reports)</li>
+                <li>Your saved home break (if you set one)</li>
+                <li>Your daily report time preference (if you schedule one)</li>
+                <li>Last report sent date (to prevent duplicate daily sends)</li>
+            </ul>
+
+            <p><strong>We do not collect:</strong></p>
+            <ul>
+                <li>Names, emails, or personal information</li>
+                <li>Location data beyond your chosen surf breaks</li>
+                <li>Usage analytics or browsing history</li>
+                <li>Payment information (service is 100% free)</li>
+            </ul>
+
+            <h3>How We Use Your Data</h3>
+            <p>Your phone number is used solely to:</p>
+            <ul>
+                <li>Send requested surf reports when you text a command</li>
+                <li>Deliver scheduled daily reports (if you opt in)</li>
+                <li>Respond to service commands (set home, daily, etc.)</li>
+            </ul>
+
+            <p><strong>We never:</strong></p>
+            <ul>
+                <li>Share, sell, or rent your data to third parties</li>
+                <li>Send marketing messages or advertisements</li>
+                <li>Use your data for any purpose beyond delivering surf reports</li>
+                <li>Store message content or conversation history</li>
+            </ul>
+
+            <h3>Data Retention</h3>
+            <p>Your data is stored only as long as you use the service. When you text "forget me" or "STOP", all your data is immediately and permanently deleted from our system. You can opt back in at any time by texting a new command.</p>
+
+            <h3>Security</h3>
+            <p>Your data is stored securely with industry-standard encryption. Access is restricted to essential system operations only.</p>
+
+            <h3>Your Rights</h3>
+            <p>You have the right to:</p>
+            <ul>
+                <li>Access your stored data (text "daily" to see your schedule)</li>
+                <li>Delete your data at any time (text "forget me")</li>
+                <li>Opt out of daily reports (text "daily off")</li>
+                <li>Request support (email <a href="mailto:help@666surf.com">help@666surf.com</a>)</li>
+            </ul>
+
+            <h3>Changes to Privacy Policy</h3>
+            <p>We may update this policy occasionally. Changes will be posted on this website. Continued use of the service after changes constitutes acceptance.</p>
+        </div>
+
+        <!-- Terms of Service -->
+        <div class="section" id="terms">
+            <h2>Terms of Service</h2>
+            <p><em>Effective Date: February 8, 2026</em></p>
+
+            <h3>Service Description</h3>
+            <p>666 Surf is a free, informational SMS service providing surf forecasts for New Jersey beaches. The service is operated as a non-commercial hobby project.</p>
+
+            <h3>Acceptance of Terms</h3>
+            <p>By texting 856-666-SURF, you agree to these terms. If you don't agree, please don't use the service.</p>
+
+            <h3>Opt-In & Consent</h3>
+            <p><strong>This is an opt-in service.</strong> You will only receive messages when:</p>
+            <ol>
+                <li>You initiate a text command (e.g., "surf lbi")</li>
+                <li>You explicitly schedule daily reports (e.g., "daily 6am")</li>
+            </ol>
+            <p>You will never receive unsolicited messages, marketing texts, or spam.</p>
+
+            <h3>Standard Messaging Rates</h3>
+            <p>Message and data rates from your mobile carrier may apply. 666 Surf does not charge any fees, but your carrier's standard SMS rates apply to messages sent and received.</p>
+
+            <h3>Opt-Out Instructions</h3>
+            <p>To stop all messages and delete your data:</p>
+            <ul>
+                <li>Text <strong>"forget me"</strong>, <strong>"STOP"</strong>, or <strong>"reset"</strong> to 856-666-SURF</li>
+                <li>Your number and preferences will be immediately removed</li>
+                <li>You can re-subscribe anytime by texting a new command</li>
+            </ul>
+            <p>To stop daily reports only (but keep using the service):</p>
+            <ul>
+                <li>Text <strong>"daily off"</strong></li>
+            </ul>
+
+            <h3>Service Availability</h3>
+            <p>666 Surf is provided "as is" without guarantees of:</p>
+            <ul>
+                <li>24/7 uptime or availability</li>
+                <li>Accuracy or timeliness of surf forecasts</li>
+                <li>Availability of specific breaks or webcams</li>
+            </ul>
+            <p>We make reasonable efforts to keep the service running, but downtime may occur for maintenance or technical issues.</p>
+
+            <h3>Disclaimer of Liability</h3>
+            <div class="warning">
+                <p><strong>This is an informational service only.</strong> 666 Surf:</p>
+                <ul>
+                    <li>Is not affiliated with official weather services, surf forecasting agencies, or government organizations</li>
+                    <li>Does not guarantee forecast accuracy</li>
+                    <li>Is not responsible for decisions made based on provided information</li>
+                    <li>Should not be used as a substitute for professional surf or weather forecasting</li>
+                </ul>
+                <p><strong>Use at your own risk.</strong> Always exercise judgment and caution when checking surf conditions. Ocean conditions can change rapidly and be dangerous.</p>
+            </div>
+
+            <h3>Prohibited Uses</h3>
+            <p>You may not:</p>
+            <ul>
+                <li>Use the service for commercial purposes</li>
+                <li>Attempt to reverse-engineer, hack, or disrupt the service</li>
+                <li>Send excessive or abusive messages</li>
+                <li>Impersonate others or provide false information</li>
+            </ul>
+            <p>Violation may result in service termination.</p>
+
+            <h3>Modifications</h3>
+            <p>We reserve the right to:</p>
+            <ul>
+                <li>Modify or discontinue the service at any time</li>
+                <li>Update these terms (changes posted on this website)</li>
+                <li>Add or remove supported surf breaks</li>
+                <li>Change message formats or features</li>
+            </ul>
+
+            <h3>Indemnification</h3>
+            <p>You agree to indemnify and hold harmless 666 Surf from any claims, damages, or expenses arising from your use of the service.</p>
+
+            <h3>Governing Law</h3>
+            <p>These terms are governed by the laws of the State of New Jersey, USA.</p>
+        </div>
+
+        <!-- Support -->
+        <div class="section" id="support">
+            <h2>Support</h2>
+
+            <h3>Need Help?</h3>
+            <p><strong>Email:</strong> <a href="mailto:help@666surf.com">help@666surf.com</a><br>
+            We typically respond within 24-48 hours.</p>
+
+            <h3>Common Questions</h3>
+
+            <h4>Q: How much does it cost?</h4>
+            <p>A: 666 Surf is completely free. Your carrier's standard SMS rates apply to messages sent/received.</p>
+
+            <h4>Q: Why aren't some breaks showing up?</h4>
+            <p>A: Text "breaks" for the full list of 26 supported locations. If your break isn't listed, we may add it in future updates.</p>
+
+            <h4>Q: How do I change my daily report time?</h4>
+            <p>A: Just text "daily [new time]" (e.g., "daily 7am"). This will replace your existing schedule.</p>
+
+            <h4>Q: Can I get reports for multiple breaks?</h4>
+            <p>A: Yes! Text "surf [break]" for any break anytime. Your "home" break is just a shortcut.</p>
+
+            <h4>Q: The forecast seems off. Why?</h4>
+            <p>A: We pull data from surf-forecast.com. Ocean conditions change rapidly — always check multiple sources and use your judgment.</p>
+
+            <h4>Q: Will you add more breaks?</h4>
+            <p>A: Possibly! Email suggestions to <a href="mailto:help@666surf.com">help@666surf.com</a>.</p>
+
+            <h4>Q: Is my data secure?</h4>
+            <p>A: Yes. We only store your phone number and preferences. Text "forget me" to delete everything instantly.</p>
+        </div>
+
+        <!-- About -->
+        <div class="section" id="about-project">
+            <h2>About</h2>
+            <p>666 Surf was created by a local NJ surfer as a hobby project to make surf checking easier. No apps, no logins, no ads — just quick, reliable surf info when you need it.</p>
+
+            <p>This service is:</p>
+            <ul>
+                <li><strong>Free forever</strong> — no subscriptions or fees</li>
+                <li><strong>Non-commercial</strong> — no advertising or monetization</li>
+                <li><strong>Privacy-focused</strong> — minimal data collection, instant deletion on request</li>
+                <li><strong>Community-driven</strong> — built for NJ surfers by NJ surfers</li>
+            </ul>
+
+            <p><strong>Not affiliated with:</strong> Any official surf forecasting service, weather bureau, government agency, or commercial entity.</p>
+
+            <p><strong>Technical Note:</strong> Forecast data is sourced from surf-forecast.com and updated continuously. Reports are automated and should be used for personal reference only.</p>
+        </div>
+
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <h2 style="color: white; border: none; padding: 0; margin-bottom: 20px;">666 Surf</h2>
+        <p style="font-size: 1.2em; margin-bottom: 20px;">New Jersey Surf Reports by Text</p>
+        <p style="font-size: 1.5em; margin-bottom: 30px;"><strong>Text 856-666-SURF (856-666-7873)</strong></p>
+        
+        <div style="margin: 20px 0;">
+            <a href="#privacy">Privacy Policy</a> | 
+            <a href="#terms">Terms of Service</a> | 
+            <a href="mailto:help@666surf.com">Support</a>
+        </div>
+
+        <p style="margin-top: 30px; opacity: 0.8;">© 2026 666 Surf | A hobby project for NJ surfers</p>
+    </footer>
+
+</body>
+</html>
