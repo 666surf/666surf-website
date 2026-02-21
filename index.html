@@ -372,7 +372,7 @@
         <div class="tagline">New Jersey Surf Reports by Text</div>
         <p style="font-size: 1.2em; margin: 20px 0;">Get instant surf forecasts for NJ breaks — no apps, no accounts, just text.</p>
         <div class="phone-number"><a href="sms:+18566667873">856-666-SURF</a></div>
-        <div class="example">Text "surf lbi" to <a href="sms:+18566667873">856-666-7873</a> → Get instant conditions!</div>
+        <div class="example">Text <a href="sms:+18566667873">"surf lbi"</a> to <a href="sms:+18566667873">856-666-7873</a> → Get instant conditions!</div>
     </div>
 
     <div class="container">
@@ -385,7 +385,7 @@
             <div class="features">
                 <div class="feature">
                     <strong>⚡ Instant Surf Reports</strong>
-                    Current conditions for over 20 breaks
+                    Current conditions for over 24 breaks
                 </div>
                 <div class="feature">
                     <strong>📷 LIVE Webcams</strong>
@@ -393,7 +393,7 @@
                 </div>
                 <div class="feature">
                     <strong>🏠 Set a Home Break</strong>
-                    Set a favorite "home" break for quick access
+                    Set a home break for quick access
                 </div>                
                 <div class="feature">
                     <strong>📅 Daily Reports</strong>
@@ -405,11 +405,12 @@
                 </div>
                 <div class="feature">
                     <strong>🚫 No Spam</strong>
-                    Messages only when you request them
+                    Messages only when you request them*
                 </div>
             </div>
 
             <p><strong>A non-commercial hobby project for NJ surfers.</strong> Not affiliated with any official surf or weather agency. Standard carrier message rates may apply.</p>
+            <p style="margin-top: 10px; font-size: 0.95em; color: #666;"><em>*We may send an occasional update about system updates, but probably not.</em></p>
         </div>
 
         <!-- Get Started -->
@@ -448,7 +449,7 @@
             <h3>🚀 Getting Started</h3>
             
             <div class="faq-item">
-                <strong>Just text <code>help</code> to <a href="sms:+18566667873">856-666-7873</a> for full list of commands</strong>
+                <strong>Text <code>help</code> to <a href="sms:+18566667873">856-666-7873</a> for full list of commands or <a href="#commands">click here.</a></strong>
                 <p style="margin-top: 10px; font-size: 0.95em; color: #666;"><em>Note: Messages may be delayed up to 30 seconds depending on network and carrier traffic.</em></p>
             </div>
 
@@ -563,48 +564,73 @@
             </div>
         </div>
 
-        <!-- More Commands -->
-        <div class="section" id="more-commands">
-            <h2>More Commands</h2>
+        <!-- Full Command List -->
+        <div class="section" id="commands">
+            <h2>Full Command List</h2>
 
-            <h3>Preferences</h3>
+            <h3>Get surf reports</h3>
 
             <div class="command">
-                <strong>home</strong> — Get Report for Your Saved Break
+                <strong>surf &lt;break&gt;</strong> — Get current conditions for any break
+                <div class="command-example">Example: surf manasquan</div>
             </div>
 
             <div class="command">
-                <strong>daily</strong> — Check Your Current Schedule
+                <strong>home</strong> — Get current conditions for your saved home break
             </div>
 
             <div class="command">
-                <strong>daily off</strong> — Cancel Daily Reports
-            </div>
-
-            <h3>Info</h3>
-
-            <div class="command">
-                <strong>breaks</strong> — List All 26 NJ Breaks
+                <strong>3 day &lt;break&gt;</strong> — Get 3-day forecast for any break
+                <div class="command-example">Example: 3 day lbi</div>
             </div>
 
             <div class="command">
-                <strong>cams</strong> — See Which Breaks Have Webcams
+                <strong>3 day</strong> — Get 3-day forecast for your saved home break
+            </div>
+
+            <h3>View info</h3>
+
+            <div class="command">
+                <strong>breaks</strong> — List all 26 NJ breaks available
             </div>
 
             <div class="command">
-                <strong>cams &lt;break&gt;</strong> — Webcams for One Spot
+                <strong>cams</strong> — See which breaks have webcams
+            </div>
+
+            <div class="command">
+                <strong>cams &lt;break&gt;</strong> — Get webcam links for a specific break
                 <div class="command-example">Example: cams seaside heights</div>
             </div>
 
             <div class="command">
-                <strong>help</strong> — Full Command List
+                <strong>help</strong> — Show full command list via text
             </div>
 
-            <h3>Opt-Out</h3>
+            <h3>Set preferences</h3>
 
             <div class="command">
-                <strong>forget me</strong> — Delete All Data
-                <div class="command-example">Also works: STOP, reset</div>
+                <strong>set home &lt;break&gt;</strong> — Save a break for quick access
+                <div class="command-example">Example: set home lbi</div>
+            </div>
+
+            <div class="command">
+                <strong>daily &lt;time&gt;</strong> — Schedule daily reports for your home break
+                <div class="command-example">Example: daily 7am</div>
+            </div>
+
+            <div class="command">
+                <strong>daily</strong> — Check your current daily report schedule
+            </div>
+
+            <div class="command">
+                <strong>daily off</strong> — Cancel daily reports
+            </div>
+
+            <h3>Manage data</h3>
+
+            <div class="command">
+                <strong>forget me</strong> — Delete all your data
             </div>
         </div>
 
@@ -848,24 +874,6 @@ You can start over with: set home &lt;break&gt;</div>
             <h3>Need Help?</h3>
             <p><strong>Email:</strong> <a href="/cdn-cgi/l/email-protection#ffc7cac9c9c9c9acaaadb9bf98929e9693d19c9092"><span class="__cf_email__" data-cfemail="211914171717177274736761464c40484d0f424e4c">[email&#160;protected]</span></a><br>
             We typically respond within 24-48 hours.</p>
-        </div>
-
-        <!-- About -->
-        <div class="section" id="about-project">
-            <h2>About</h2>
-            <p><a href="sms:+18566667873">666-SURF</a> was created by a local NJ surfer as a hobby project to make surf checking easier. No apps, no logins, no ads — just quick, reliable surf info when you need it.</p>
-
-            <p>This service is:</p>
-            <ul>
-                <li><strong>Free forever</strong> — no subscriptions or fees</li>
-                <li><strong>Non-commercial</strong> — no advertising or monetization</li>
-                <li><strong>Privacy-focused</strong> — minimal data collection, instant deletion on request</li>
-                <li><strong>Community-driven</strong> — built for NJ surfers by NJ surfers</li>
-            </ul>
-
-            <p><strong>Not affiliated with:</strong> Any official surf forecasting service, weather bureau, government agency, or commercial entity.</p>
-
-            <p><strong>Technical Note:</strong> Forecast data is sourced from surf-forecast.com and updated continuously. Reports are automated and should be used for personal reference only.</p>
         </div>
 
     </div>
