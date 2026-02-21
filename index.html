@@ -17,21 +17,83 @@
             line-height: 1.6;
             color: #333;
             background: #f5f5f5;
+            padding: 0;
+            margin: 0;
         }
 
         .container {
             max-width: 900px;
             margin: 0 auto;
-            padding: 20px;
+            padding: 0 20px 20px 20px;
+        }
+
+        /* Quick Help Button */
+        .help-button {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: #ffc107;
+            color: #1e3c72;
+            padding: 12px 24px;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 1em;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+            z-index: 1000;
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+
+        .help-button:hover {
+            background: #ffcd38;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.3);
+            text-decoration: none;
+            color: #1e3c72;
+        }
+
+        /* Back to Top Button */
+        .back-to-top {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: #2a5298;
+            color: white;
+            padding: 12px 18px;
+            border-radius: 50%;
+            font-weight: 700;
+            font-size: 1.2em;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+            z-index: 999;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .back-to-top:hover {
+            background: #1e3c72;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.3);
+            text-decoration: none;
+            color: white;
         }
 
         /* Hero Section */
         .hero {
             background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            background-image: 
+                linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)),
+                url('https://666surf.com/666surf-hero.jpg');
+            background-size: cover;
+            background-position: center;
             color: white;
             text-align: center;
             padding: 60px 20px;
-            margin: -20px -20px 40px -20px;
+            margin: 0 0 40px 0;
         }
 
         .hero h1 {
@@ -173,6 +235,17 @@
             margin: 8px 0;
         }
 
+        /* Code text styling */
+        code {
+            font-family: "Courier New", Consolas, Monaco, monospace;
+            font-size: 1em;
+            font-weight: 600;
+            background: #e9ecef;
+            padding: 2px 8px;
+            border-radius: 4px;
+            color: #1e3c72;
+        }
+
         /* Highlight boxes */
         .highlight {
             background: #e7f3ff;
@@ -190,13 +263,29 @@
             border-radius: 4px;
         }
 
+        /* FAQ Styling */
+        .faq-item {
+            background: #f8f9fa;
+            padding: 15px 20px;
+            margin: 15px 0;
+            border-radius: 6px;
+            border-left: 4px solid #2a5298;
+        }
+
+        .faq-item strong {
+            color: #1e3c72;
+            font-size: 1.1em;
+            display: block;
+            margin-bottom: 8px;
+        }
+
         /* Footer */
         footer {
             background: #1e3c72;
             color: white;
             text-align: center;
             padding: 40px 20px;
-            margin: 40px -20px -20px -20px;
+            margin: 40px 0 0 0;
         }
 
         footer a {
@@ -205,31 +294,47 @@
 
         /* Links - Uniform styling across site */
         a {
-            color: #14b8a6;  /* Teal for content links on white background */
+            color: #0f766e;  /* Darker teal for better readability */
             text-decoration: none;
             transition: color 0.2s ease;
         }
 
         a:hover {
-            color: #0d9488;  /* Darker teal on hover */
+            color: #0d9488;
             text-decoration: underline;
         }
 
-        /* Hero and footer links on dark blue background need lighter color */
+        /* Hero and footer links on dark blue background */
         .hero a,
         footer a {
-            color: #5eead4;  /* Light cyan/teal - readable on blue background */
+            color: #5eead4;
             font-weight: 700;
         }
 
         .hero a:hover,
         footer a:hover {
-            color: #99f6e4;  /* Even lighter on hover */
+            color: #99f6e4;
             text-decoration: underline;
         }
 
         /* Responsive */
         @media (max-width: 768px) {
+            .help-button {
+                top: 10px;
+                right: 10px;
+                padding: 10px 20px;
+                font-size: 0.9em;
+            }
+
+            .back-to-top {
+                bottom: 10px;
+                right: 10px;
+                padding: 10px 14px;
+                font-size: 1.1em;
+                width: 45px;
+                height: 45px;
+            }
+            
             .hero h1 {
                 font-size: 2em;
             }
@@ -251,37 +356,21 @@
                 font-size: 1.5em;
             }
         }
-
-        /* Table of Contents */
-        .toc {
-            background: #f8f9fa;
-            padding: 20px;
-            border-radius: 8px;
-            margin-bottom: 30px;
-        }
-
-        .toc ul {
-            list-style: none;
-            margin: 10px 0;
-        }
-
-        .toc li {
-            margin: 5px 0;
-        }
-
-        .toc a {
-            color: #1e3c72;
-            font-weight: 500;
-        }
     </style>
 </head>
 <body>
+
+    <!-- Quick Help Button -->
+    <a href="#faq" class="help-button">Need Help?</a>
+
+    <!-- Back to Top Button -->
+    <a href="#" class="back-to-top" title="Back to Top">↑</a>
 
     <!-- Hero Section -->
     <div class="hero">
         <h1>🌊 <a href="sms:+18566667873">666-SURF</a></h1>
         <div class="tagline">New Jersey Surf Reports by Text</div>
-        <p style="font-size: 1.2em; margin: 20px 0;">Get instant surf forecasts for any NJ beach — no apps, no accounts, just text.</p>
+        <p style="font-size: 1.2em; margin: 20px 0;">Get instant surf forecasts for NJ breaks — no apps, no accounts, just text.</p>
         <div class="phone-number"><a href="sms:+18566667873">856-666-SURF</a></div>
         <div class="example">Text "surf lbi" to <a href="sms:+18566667873">856-666-7873</a> → Get instant conditions!</div>
     </div>
@@ -296,23 +385,23 @@
             <div class="features">
                 <div class="feature">
                     <strong>⚡ Instant Surf Reports</strong>
-                    Current conditions for 26+ NJ breaks
+                    Current conditions for over 20 breaks
                 </div>
+                <div class="feature">
+                    <strong>📷 LIVE Webcams</strong>
+                    Over 20 webcam links
+                </div>
+                <div class="feature">
+                    <strong>🏠 Set a Home Break</strong>
+                    Set a favorite "home" break for quick access
+                </div>                
                 <div class="feature">
                     <strong>📅 Daily Reports</strong>
-                    Optional automated reports at your chosen time
-                </div>
-                <div class="feature">
-                    <strong>📷 Live Webcams</strong>
-                    Webcam links when available
-                </div>
-                <div class="feature">
-                    <strong>🏠 Save Your Spot</strong>
-                    Set a favorite "home" break for quick access
+                    Set up automated reports for your home break
                 </div>
                 <div class="feature">
                     <strong>🌊 3-Day Forecasts</strong>
-                    Extended outlooks for planning
+                    Extended forecasts available for all breaks
                 </div>
                 <div class="feature">
                     <strong>🚫 No Spam</strong>
@@ -320,83 +409,204 @@
                 </div>
             </div>
 
-            <p><strong>This is a free, non-commercial hobby project for NJ surfers.</strong> Not affiliated with any official surf or weather agency. Standard carrier message rates may apply.</p>
+            <p><strong>A non-commercial hobby project for NJ surfers.</strong> Not affiliated with any official surf or weather agency. Standard carrier message rates may apply.</p>
         </div>
 
-<!-- Get Started -->
-<div class="section" id="get-started">
-    <h2>Get a Surf Report Right Now</h2>
+        <!-- Get Started -->
+        <div class="section" id="get-started">
+            <h2>Get Started</h2>
 
-    <div class="highlight">
-        <p style="font-size:1.2em;"><strong>Text:</strong> <code>surf lbi</code></p>
-        <p style="font-size:1.2em;"><strong>To:</strong> <a href="sms:+18566667873">856-666-7873</a></p>
-        <p style="margin-top:10px;">You’ll instantly receive today’s AM & PM surf conditions.</p>
-    </div>
+            <div class="highlight">
+                <p style="font-size:1.2em;"><strong>Text:</strong> <code>surf lbi</code></p>
+                <p style="font-size:1.2em;"><strong>To:</strong> <a href="sms:+18566667873">856-666-7873</a></p>
+                <p style="margin-top:10px;">You'll receive today's AM & PM surf conditions.</p>
+            </div>
 
-    <p>No apps. No accounts. No spam. Just text and get the forecast.</p>
-</div>
+            <h3>No apps, no accounts, no spam.</h3>
+            <p>From Sandy Hook to Cape May, get instant surf forecasts and live views for over 20 NJ breaks — no apps, no accounts, just text. See all <a href="#breaks">breaks here.</a></p>
+        </div>
 
-<!-- How It Works -->
-<div class="section" id="how-it-works">
-    <h2>How It Works</h2>
+        <!-- How It Works -->
+        <div class="section" id="how-it-works">
+            <h2>How It Works</h2>
 
-    <ol style="margin-left: 25px;">
-        <li><strong>Text a command</strong> to <a href="sms:+18566667873">856-666-SURF</a> (example: <code>surf manasquan</code>).</li>
-        <li><strong>Get instant surf conditions</strong> delivered by SMS.</li>
-        <li><strong>(Optional) Save your home break</strong> for quick access anytime.</li>
-        <li><strong>(Optional) Schedule daily reports</strong> at your preferred time.</li>
-        <li><strong>Opt out anytime</strong> by texting <code>forget me</code> or <code>STOP</code>.</li>
-    </ol>
+            <ol style="margin-left: 25px;">
+                <li><strong>Text a command</strong> to <a href="sms:+18566667873">856-666-SURF</a> (example: <code>surf manasquan</code>).</li>
+                <li><strong>Get instant surf conditions</strong> delivered by SMS.</li>
+                <li><strong>Save your home break</strong> for quick access anytime.</li>
+                <li><strong>Schedule daily reports</strong> for any time.</li>
+                <li><strong>Opt out</strong> by texting <code>forget me</code>.</li>
+            </ol>
 
-    <p>Break names are flexible — you can use shortcuts like <code>lbi</code>, <code>oc</code>, or full names like <code>ocean city</code>.</p>
-</div>
+            <p>Break names are flexible — you can use shortcuts like <code>lbi</code>, <code>oc</code>, or full names like <code>ocean city</code>.</p>
+        </div>
 
+        <!-- FAQ Section -->
+        <div class="section" id="faq">
+            <h2>Get Help</h2>
 
-<!-- More Commands -->
-<div class="section" id="more-commands">
-    <h2>More Commands</h2>
+            <h3>🚀 Getting Started</h3>
+            
+            <div class="faq-item">
+                <strong>Just text <code>help</code> to <a href="sms:+18566667873">856-666-7873</a> for full list of commands</strong>
+                <p style="margin-top: 10px; font-size: 0.95em; color: #666;"><em>Note: Messages may be delayed up to 30 seconds depending on network and carrier traffic.</em></p>
+            </div>
 
-    <h3>Preferences</h3>
+            <h3>📊 Using Reports</h3>
 
-    <div class="command">
-        <strong>home</strong> — Get Report for Your Saved Break
-    </div>
+            <div class="faq-item">
+                <strong>How do I get a surf report?</strong>
+                <p>Text <code>surf &lt;break&gt;</code></p>
+                <p style="margin-top: 8px; color: #666; font-style: italic;">Example: <code>surf manasquan</code></p>
+            </div>
 
-    <div class="command">
-        <strong>daily</strong> — Check Your Current Schedule
-    </div>
+            <div class="faq-item">
+                <strong>What breaks are available?</strong>
+                <p>Text <code>breaks</code></p>
+                <p>(Or <a href="#breaks">click here</a>)</p>
+            </div>
 
-    <div class="command">
-        <strong>daily off</strong> — Cancel Daily Reports
-    </div>
+            <div class="faq-item">
+                <strong>How do I get a 3-day forecast?</strong>
+                <p>Text <code>3 day &lt;break&gt;</code></p>
+                <p style="margin-top: 8px; color: #666; font-style: italic;">Example: <code>3 day lbi</code></p>
+            </div>
 
-    <h3>Info</h3>
+            <div class="faq-item">
+                <strong>How do webcam links work?</strong>
+                <p>Text <code>cams &lt;break&gt;</code></p>
+                <p style="margin-top: 8px; color: #666; font-style: italic;">Example: <code>cams seaside heights</code></p>
+            </div>
 
-    <div class="command">
-        <strong>breaks</strong> — List All 26 NJ Breaks
-    </div>
+            <h3>🏠 Saving Your Spot</h3>
 
-    <div class="command">
-        <strong>cams</strong> — See Which Breaks Have Webcams
-    </div>
+            <div class="faq-item">
+                <strong>How do I save my home break?</strong>
+                <p>Text <code>set home &lt;break&gt;</code></p>
+                <p style="margin-top: 8px; color: #666; font-style: italic;">Example: <code>set home lbi</code></p>
+            </div>
 
-    <div class="command">
-        <strong>cams &lt;break&gt;</strong> — Webcams for One Spot
-        <div class="command-example">Example: cams seaside heights</div>
-    </div>
+            <div class="faq-item">
+                <strong>How do I get my saved report?</strong>
+                <p>Text <code>home</code></p>
+            </div>
 
-    <div class="command">
-        <strong>help</strong> — Full Command List
-    </div>
+            <div class="faq-item">
+                <strong>Can I change my home break?</strong>
+                <p>Yes, just text <code>set home &lt;break&gt;</code> again with a new break</p>
+            </div>
 
-    <h3>Opt-Out</h3>
+            <h3>⏰ Daily Reports</h3>
 
-    <div class="command">
-        <strong>forget me</strong> — Delete All Data
-        <div class="command-example">Also works: STOP, reset</div>
-    </div>
-</div>
+            <div class="faq-item">
+                <strong>How do I schedule daily texts?</strong>
+                <p>Text <code>daily &lt;time&gt;</code></p>
+                <p style="margin-top: 8px; color: #666; font-style: italic;">Example: <code>daily 7am</code></p>
+            </div>
 
+            <div class="faq-item">
+                <strong>How do I cancel daily texts?</strong>
+                <p>Text <code>daily off</code></p>
+            </div>
+
+            <div class="faq-item">
+                <strong>When will I get my report?</strong>
+                <p>At your scheduled time every day</p>
+            </div>
+
+            <h3>🔒 Privacy & Data</h3>
+
+            <div class="faq-item">
+                <strong>What data do you store?</strong>
+                <p>Only your home break and daily time (encrypted)</p>
+            </div>
+
+            <div class="faq-item">
+                <strong>How do I delete my data?</strong>
+                <p>Text <code>forget me</code></p>
+            </div>
+
+            <div class="faq-item">
+                <strong>Do you sell my data?</strong>
+                <p>Never</p>
+            </div>
+
+            <h3>💰 Pricing</h3>
+
+            <div class="faq-item">
+                <strong>Is it free?</strong>
+                <p>Free during beta</p>
+            </div>
+
+            <div class="faq-item">
+                <strong>How can I support?</strong>
+                <p><a href="https://venmo.com/realbokey" target="_blank">venmo.com/realbokey</a></p>
+            </div>
+
+            <h3>🛠️ Troubleshooting</h3>
+
+            <div class="faq-item">
+                <strong>Not receiving texts?</strong>
+                <div>
+                    <p><strong>Check if you've opted out:</strong></p>
+                    <ul>
+                        <li>Text <code>START</code> or <code>UNSTOP</code> to 856-666-7873</li>
+                        <li>You should get a confirmation message</li>
+                    </ul>
+                    <p><strong>Still not working?</strong></p>
+                    <ul>
+                        <li>Make sure you're texting the right number: <strong>856-666-SURF (856-666-7873)</strong></li>
+                        <li>Check spelling of commands (try <code>help</code>, <code>breaks</code>, or <code>surf lbi</code>)</li>
+                        <li>Email <a href="/cdn-cgi/l/email-protection#19212c2f2f2f2f4a4c4b5f597e74787075377a7674"><span class="__cf_email__" data-cfemail="5f676a696969690c0a0d191f38323e3633713c3032">[email&#160;protected]</span></a> if issues persist</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- More Commands -->
+        <div class="section" id="more-commands">
+            <h2>More Commands</h2>
+
+            <h3>Preferences</h3>
+
+            <div class="command">
+                <strong>home</strong> — Get Report for Your Saved Break
+            </div>
+
+            <div class="command">
+                <strong>daily</strong> — Check Your Current Schedule
+            </div>
+
+            <div class="command">
+                <strong>daily off</strong> — Cancel Daily Reports
+            </div>
+
+            <h3>Info</h3>
+
+            <div class="command">
+                <strong>breaks</strong> — List All 26 NJ Breaks
+            </div>
+
+            <div class="command">
+                <strong>cams</strong> — See Which Breaks Have Webcams
+            </div>
+
+            <div class="command">
+                <strong>cams &lt;break&gt;</strong> — Webcams for One Spot
+                <div class="command-example">Example: cams seaside heights</div>
+            </div>
+
+            <div class="command">
+                <strong>help</strong> — Full Command List
+            </div>
+
+            <h3>Opt-Out</h3>
+
+            <div class="command">
+                <strong>forget me</strong> — Delete All Data
+                <div class="command-example">Also works: STOP, reset</div>
+            </div>
+        </div>
 
         <!-- Supported Breaks -->
         <div class="section" id="breaks">
@@ -543,7 +753,7 @@ You can start over with: set home &lt;break&gt;</div>
                 <li>Access your stored data (text "daily" to see your schedule)</li>
                 <li>Delete your data at any time (text "forget me")</li>
                 <li>Opt out of daily reports (text "daily off")</li>
-                <li>Request support (email <a href="mailto:856666SURF@gmail.com">856666SURF@gmail.com</a>)</li>
+                <li>Request support (email <a href="/cdn-cgi/l/email-protection#566e63606060600503041016313b373f3a7835393b"><span class="__cf_email__" data-cfemail="a0989596969696f3f5f2e6e0c7cdc1c9cc8ec3cfcd">[email&#160;protected]</span></a>)</li>
             </ul>
 
             <h3>Changes to Privacy Policy</h3>
@@ -636,31 +846,8 @@ You can start over with: set home &lt;break&gt;</div>
             <h2>Support</h2>
 
             <h3>Need Help?</h3>
-            <p><strong>Email:</strong> <a href="mailto:856666SURF@gmail.com">856666SURF@gmail.com</a><br>
+            <p><strong>Email:</strong> <a href="/cdn-cgi/l/email-protection#ffc7cac9c9c9c9acaaadb9bf98929e9693d19c9092"><span class="__cf_email__" data-cfemail="211914171717177274736761464c40484d0f424e4c">[email&#160;protected]</span></a><br>
             We typically respond within 24-48 hours.</p>
-
-            <h3>Common Questions</h3>
-
-            <h4>Q: How much does it cost?</h4>
-            <p>A: <a href="sms:+18566667873">666-SURF</a> is completely free. Your carrier's standard SMS rates apply to messages sent/received.</p>
-
-            <h4>Q: Why aren't some breaks showing up?</h4>
-            <p>A: Text "breaks" for the full list of 26 supported locations. If your break isn't listed, we may add it in future updates.</p>
-
-            <h4>Q: How do I change my daily report time?</h4>
-            <p>A: Just text "daily [new time]" (e.g., "daily 7am"). This will replace your existing schedule.</p>
-
-            <h4>Q: Can I get reports for multiple breaks?</h4>
-            <p>A: Yes! Text "surf [break]" for any break anytime. Your "home" break is just a shortcut.</p>
-
-            <h4>Q: The forecast seems off. Why?</h4>
-            <p>A: We pull data from surf-forecast.com. Ocean conditions change rapidly — always check multiple sources and use your judgment.</p>
-
-            <h4>Q: Will you add more breaks?</h4>
-            <p>A: Possibly! Email suggestions to <a href="mailto:help@666surf.com">help@666surf.com</a>.</p>
-
-            <h4>Q: Is my data secure?</h4>
-            <p>A: Yes. We only store your phone number and preferences. Text "forget me" to delete everything instantly.</p>
         </div>
 
         <!-- About -->
@@ -689,14 +876,4 @@ You can start over with: set home &lt;break&gt;</div>
         <p style="font-size: 1.2em; margin-bottom: 20px;">New Jersey Surf Reports by Text</p>
         <p style="font-size: 1.5em; margin-bottom: 30px;"><strong>Text <a href="sms:+18566667873">856-666-SURF</a></strong></p>
         
-        <div style="margin: 20px 0;">
-            <a href="#privacy">Privacy Policy</a> | 
-            <a href="#terms">Terms of Service</a> | 
-            <a href="mailto:help@666surf.com">Support</a>
-        </div>
-
-        <p style="margin-top: 30px; opacity: 0.8;">© 2026 <a href="sms:+18566667873">666-SURF</a> | A hobby project for NJ surfers</p>
-    </footer>
-
-</body>
-</html>
+        <div sty
